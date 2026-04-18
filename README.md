@@ -78,14 +78,14 @@ bun run seed
 
 ## API Endpoints
 
-| Method | Endpoint | Description | Auth |
-|--------|----------|-------------|------|
-| POST | `/auth/login` | Admin login | No |
-| POST | `/auth/logout` | Admin logout | Yes |
-| POST | `/contact` | Submit contact form | No |
-| GET | `/messages` | Get all messages | Yes |
-| PATCH | `/messages/:id` | Mark message as read | Yes |
+| Method | Endpoint        | Description          | Auth |
+| ------ | --------------- | -------------------- | ---- |
+| POST   | `/auth/login`   | Admin login          | No   |
+| POST   | `/auth/logout`  | Admin logout         | Yes  |
+| POST   | `/contact`      | Submit contact form  | No   |
+| GET    | `/messages`     | Get all messages     | Yes  |
+| PATCH  | `/messages/:id` | Mark message as read | Yes  |
 
 ## License
 
-MIT
+[MIT](LICENSE)
