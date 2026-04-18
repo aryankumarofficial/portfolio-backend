@@ -6,7 +6,7 @@ import { desc, eq } from "drizzle-orm";
 export default function (fastify: FastifyInstance) {
   fastify.get(
     "/messages",
-    { preHandler: [fastify.authenticate] },
+    { preHandler: fastify.authenticate },
     async (req, reply) => {
       async () => {
         return db.select().from(messeges).orderBy(desc(messeges.createdAt));
@@ -15,7 +15,7 @@ export default function (fastify: FastifyInstance) {
   );
   fastify.patch(
     "/messages/:id",
-    { preHandler: [fastify.authenticate] },
+    { preHandler: fastify.authenticate },
     async (req, reply) => {
       const { id } = req.params as any;
       await db
