@@ -9,7 +9,7 @@ import contactRoutes from "./routes/contact";
 import messageRoutes from "./routes/message";
 const app = Fastify();
 
-const port = Number(process.env.PORT) || 8000;
+const port = Number(process.env.PORT) || 5000;
 
 await app.register(cors, {
   origin:
@@ -41,6 +41,6 @@ app.register(authRoutes, { prefix: "auth" });
 app.register(contactRoutes);
 app.register(messageRoutes);
 
-app.listen({ port }, () => {
+app.listen({ port, host: "0.0.0.0" }, () => {
   console.log(`Server running at port ${port}`);
 });
