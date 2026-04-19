@@ -1,10 +1,12 @@
-FROM oven/bun:1.1.0
+FROM oven/bun:1.1-alpine
 
 WORKDIR /app
 
+RUN apk add --no-cache python3 make g++ gcc libc-dev
+
 COPY package.json bun.lock ./
 
-RUN bun install --frozen-lockfile
+RUN bun install --ignore-scripts
 
 COPY . .
 
