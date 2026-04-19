@@ -15,6 +15,7 @@ await app.register(cors, {
   origin:
     /^(https:\/\/([\w-]+\.)?aryankumarofficial\.dev|http:\/\/localhost(:\d+)?)$/,
   credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 });
 
 await app.register(cookie);
