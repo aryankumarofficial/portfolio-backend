@@ -37,7 +37,7 @@ app.get("/", async (_, reply) => {
   return reply.send({ message: `Fastify Backend Running` });
 });
 
-app.register(authRoutes, { prefix: "auth" });
+app.register(authRoutes, { prefix: "/auth" });
 app.register(contactRoutes);
 app.register(messageRoutes);
 
