@@ -7,10 +7,10 @@ export default function (fastify: FastifyInstance) {
   fastify.get(
     "/messages",
     { preHandler: fastify.authenticate },
-    async (req, reply) => {
+    async (req, reply) =>
       async () => {
         return db.select().from(messeges).orderBy(desc(messeges.createdAt));
-      };
+      ;
     },
   );
   fastify.patch(
