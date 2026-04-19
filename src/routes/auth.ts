@@ -26,7 +26,7 @@ export default async function (fastify: FastifyInstance) {
       .setCookie("token", token, {
         httpOnly: true,
         secure: true,
-        sameSite: "lax",
+        sameSite: "none",
         maxAge: 60 * 60 * 24 * 1, // 1Day
       })
       .send({ success: true });
