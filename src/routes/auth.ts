@@ -27,6 +27,7 @@ export default async function (fastify: FastifyInstance) {
         httpOnly: true,
         secure: true,
         sameSite: "lax",
+        maxAge: 60 * 60 * 24 * 1, // 1Day
       })
       .send({ success: true });
   });
